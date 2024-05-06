@@ -103,11 +103,17 @@ jobs:
           if [ $setup_java_ver -gt 11 ]; then
             echo "setup_java_ver=$setup_java_ver" >> $GITHUB_ENV
           fi
-      - uses: actions/setup-java@v4
-        if: ${{ env.setup_java_ver }}
+      #- uses: actions/setup-java@v4
+      #  if: ${{ env.setup_java_ver }}
+      #  with:
+      #    distribution: temurin
+      #    java-version: ${{ env.setup_java_ver }}
+      - name: set up JDK 17
+        uses: actions/setup-java@v2
         with:
-          distribution: temurin
-          java-version: ${{ env.setup_java_ver }}
+          java-version: '17'
+          distribution: 'adopt'
+          
       - uses: gradle/gradle-build-action@v2
         if: ${{ env.commit }}
       - name: Build With Gradle
