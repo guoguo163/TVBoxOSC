@@ -114,7 +114,7 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
           
-      - uses: gradle/gradle-build-action@v4
+      - uses: gradle/gradle-build-action@v3
         if: ${{ env.commit }}
       - name: Build With Gradle
         if: ${{ env.commit }}
