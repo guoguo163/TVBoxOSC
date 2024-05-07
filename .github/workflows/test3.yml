@@ -99,7 +99,6 @@ jobs:
         if: ${{ env.commit }}
         working-directory: TVBoxOSC
         run: |
-          #setup_java_ver=$(grep -o 'JavaVersion.VERSION_[0-9_]\+' app/build.gradle |head -1 |sed 's/.*_//')
           setup_java_ver=$(grep -o 'JavaVersion.VERSION_[0-9_]\+' app/build.gradle | head -1 | sed 's/.*VERSION_//; s/_/./')
           if [ $setup_java_ver -gt 11 ]; then
             echo "setup_java_ver=$setup_java_ver" >> $GITHUB_ENV
