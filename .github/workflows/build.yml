@@ -1,8 +1,8 @@
 name: Test
 
 on:
-  schedule:
-    - cron: 59 */8 * * *
+  #schedule:
+  #  - cron: 59 */8 * * *
   workflow_dispatch:
     inputs:
       rebuild:
@@ -21,10 +21,13 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - userName: q215613905
-            repoName: TVBoxOS
-            branchName: main
-          - userName: takagen99
+          #- userName: q215613905
+          #  repoName: TVBoxOS
+          #  branchName: main
+          #- userName: takagen99
+          #  repoName: Box
+          #  branchName: main
+          - userName: guoguo163
             repoName: Box
             branchName: main
             java_ver: 17
