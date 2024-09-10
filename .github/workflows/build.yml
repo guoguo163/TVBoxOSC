@@ -195,7 +195,7 @@ jobs:
           git add --all
           git commit -m "${{ env.commit }}"
           git push -u -f origin master
-
+  /**
   telegram-bot-api:
     name: Telegram Bot API
     runs-on: ubuntu-latest
@@ -235,7 +235,7 @@ jobs:
         with:
           name: telegram-bot-api-binary
           path: telegram-bot-api-binary
-
+  **/
   clean:
     needs: build
     runs-on: ubuntu-latest
